@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const promoRouter = require('./promoRouter');
 
 const leaderRouter = express.Router();
 
@@ -26,7 +25,7 @@ leaderRouter.route('/')
     res.end('Deleting all leaders');
 });
 
-promoRouter.route('/:leaderId')
+leaderRouter.route('/:leaderId')
 .all((req,res,next) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
